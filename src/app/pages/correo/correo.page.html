@@ -1,0 +1,60 @@
+
+<ion-content>
+  <div class="center-container">
+    <div class="ion-padding-vertical">
+      <ion-card class="ion-text-center card-background">
+        <ion-card-content>
+          <!-- Botón de retorno posicionado en la esquina superior izquierda -->
+          <ion-button slot="start" class="botonRetorno" size="medium" shape="round" (click)="regresar()">
+            <ion-icon class="iconoRetorno" slot="icon-only" name="return-Down-Back-Outline"></ion-icon>
+          </ion-button>
+        </ion-card-content>
+        <ion-card-content>
+
+          <ion-toolbar>
+            {{ 'MailPage.Title.Email' | translate }} <!--nuevo-->
+          </ion-toolbar>
+          <br><br>
+          <ion-card>
+            <!--Paso 1: Ingresa tu correo-->
+            <ion-label class="step-title">Paso 1: Ingresa tu correo</ion-label>
+            <ion-card-subtitle>
+              <!--Ingresa a tu correo-->
+              {{ 'MailPage.Subtitle.Email' | translate }}
+            </ion-card-subtitle>
+            <ion-input 
+              type="text" 
+              [(ngModel)]="correo" 
+              placeholder="{{ 'MailPage.Placeholder.Email' | translate }}"
+              [attr.disabled]="correo && cuenta ? true : null"
+              (keyup.enter)="ingresarValidarRespuestaSecreta()">          
+            </ion-input>
+
+            <ion-card-subtitle>
+              <!--O ingresa tu cuenta-->
+              {{ 'MailPage.Card.Or' | translate }}
+            </ion-card-subtitle>
+            <ion-input 
+              type="text" 
+              [(ngModel)]="cuenta" 
+              placeholder="Ej: mperez" 
+              [attr.disabled]="correo && cuenta ? true : null"
+              (keyup.enter)="ingresarValidarRespuestaSecreta()">          
+            </ion-input>
+
+            <ion-button 
+              shape="block" 
+              size="small" 
+              (click)="ingresarValidarRespuestaSecreta()">
+              <ion-icon name="checkmark"></ion-icon>
+              {{ 'MailPage.Button.Verify' | translate }}
+            </ion-button>
+          </ion-card>
+
+          <br><br>
+
+        </ion-card-content>
+      </ion-card>
+    </div>
+  </div>
+</ion-content>

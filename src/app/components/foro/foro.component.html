@@ -1,0 +1,82 @@
+<ion-header [translucent]="true">
+  <ion-toolbar mode="ios">
+    <ion-title class="tituloPrincipal">¡Foro TODAY!</ion-title>
+  </ion-toolbar>
+
+  <ion-toolbar>
+    <ion-card>
+      <ion-item lines="none">
+        <span>{{ 'ForumPage.Span.Publisher' | translate }}:&nbsp;</span>
+        <!--Seleccione su usuario-->
+        <ion-select placeholder="{{ 'ForumPage.Placeholder.SelectPublisher' | translate }}"
+                    class="ion-float-right"
+                    [(ngModel)]="selectedUserId"
+                    (ngModelChange)="cambiarUsuario($event)">
+          <ion-select-option *ngFor="let u of usuarios" [value]="u.id">
+            {{ u.nombre }} {{ u.apellido }} <!-- Mostrar nombre y apellido -->
+          </ion-select-option>
+        </ion-select>
+      </ion-item>
+    </ion-card>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <a id="topOfPage" href="#topOfPage"></a>
+
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>{{ 'ForumPage.Title.Card' | translate }}</ion-card-title>
+      <ion-card-subtitle>{{ selectedPostText }}</ion-card-subtitle>
+    </ion-card-header>
+
+    <ion-card-content>
+      <ion-item>
+        <ion-label position="floating" color="secondary">{{ 'ForumPage.Title.Label' | translate }}</ion-label>
+        <!--Ingresa el título de la publicación-->
+        <ion-input [(ngModel)]="publicacion.title" placeholder="{{ 'ForumPage.Title.Input' | translate }}"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="floating" color="secondary">{{ 'ForumPage.Title.Description' | translate }}</ion-label>
+        <!--Escribe el contenido de la publicación-->
+        <ion-textarea [(ngModel)]="publicacion.body" placeholder="{{ 'ForumPage.textarea.Description' | translate }}"></ion-textarea>
+      </ion-item>
+
+      <div class="ion-text-center margin-top-6">
+        <!--Limpiar publicación-->
+        <ion-button color="medium" shape="round" (click)="limpiarPublicacion()">{{ 'ForumPage.Button.Clean' | translate }}</ion-button>
+        <ion-button color="primary" shape="round" (click)="guardarPublicacion()">
+          {{ publicacion.id ? ('ForumPage.Button.Update' | translate) : ('ForumPage.Button.Save' | translate) }}
+
+        </ion-button>
+      </div>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card class="sin-bordes">
+    <ion-card-title class="con-padding-top">{{ 'ForumPage.Title.CardPosts' | translate }}</ion-card-title>
+  </ion-card>
+
+  <ion-list>
+    <ion-card *ngFor="let publicacion of publicaciones; trackBy: getPublicacionId">
+      <ion-card-header>
+        <h6>(Publicación #{{ publicacion.id }}) {{ publicacion.author }}</h6>
+        <h4>{{ publicacion.title }}</h4>
+      </ion-card-header>
+
+      <ion-card-content>
+        <p>{{ publicacion.body }}</p>
+      </ion-card-content>
+
+      <div style="display: flex; justify-content: flex-end; gap: 10px; margin-right: 16px;">
+        <ion-fab-button size="small" color="primary" (click)="editarPublicacion(publicacion)">
+          <ion-icon name="pencil-outline"></ion-icon>
+        </ion-fab-button>
+        <ion-fab-button size="small" color="danger" (click)="borrarPublicacion(publicacion)">
+          <ion-icon name="trash-outline"></ion-icon>
+        </ion-fab-button>
+      </div>
+    </ion-card>
+  </ion-list>
+</ion-content>

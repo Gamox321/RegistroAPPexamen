@@ -1,0 +1,27 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Usuarios</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <!-- Mostrar lista de usuarios solo si es admin -->
+  <ion-list *ngIf="isAdmin">
+    <ion-item *ngFor="let usuario of usuarios">
+      <ion-label>
+        <h2>{{ usuario.nombre }} {{ usuario.apellido }}</h2>
+        <p>{{ usuario.cuenta }}</p>
+      </ion-label>
+
+      <!-- Eliminar usuario solo si es admin -->
+      <ion-button color="danger" (click)="eliminarUsuario(usuario.cuenta)" *ngIf="isAdmin">
+        Eliminar
+      </ion-button>
+    </ion-item>
+  </ion-list>
+
+  <!-- Si no es admin, mostrar un mensaje -->
+  <div *ngIf="!isAdmin">
+    <p>No tienes acceso a estas funcionalidades.</p>
+  </div>
+</ion-content>

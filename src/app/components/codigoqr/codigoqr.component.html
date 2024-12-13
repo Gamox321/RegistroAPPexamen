@@ -1,0 +1,60 @@
+<ion-content class="ion-padding ion-text-center" class="video-container">
+
+  <ion-header>
+    <h3 *ngIf="!datosQR" [@fadeInAnimation]>
+      {{ 'QrPage.Title.!Datosqr' | translate }}
+    </h3>
+  </ion-header>
+
+  <ion-button class="stop-button" (click)="detenerEscaneoQr()">
+    <!--Detener escaneo de QR-->
+    {{ 'QrPage.Button.Stop' | translate }}
+  </ion-button>
+
+  <div class="frame">
+    <video class="video" #video></video>
+    <div class="moving-horizontal-line" [class.active]="escaneando"></div>
+  </div>
+
+  <canvas #canvas hidden></canvas>
+
+</ion-content>
+
+
+<!--
+
+<div class="centrar">
+  <div class="enmarcar">
+    <h3 *ngIf="!datosQR" [@fadeInAnimation]>
+      {{ 'QrPage.Title.!Datosqr' | translate }}
+    </h3>
+
+    <div class="video-container">
+      <video class="video" #video [hidden]="!escaneando" style="width: 100%"></video>
+      <div class="moving-horizontal-line" [class.active]="escaneando"></div>
+    </div>
+    <canvas #canvas hidden></canvas>
+
+    <div *ngIf="datosQR">
+      <h1>{{ 'QrPage.Title.Datosqr' | translate }}</h1>
+      
+    </div>
+    <div class="margin-top">
+      <ion-button
+        *ngIf="!escaneando"
+        (click)="comenzarEscaneoQR()"
+        shape="round"
+      >
+        <ion-icon slot="start" name="videocam-outline"></ion-icon>
+        {{ 'QrPage.Title.Start' | translate }}
+      </ion-button>
+
+      <ion-button *ngIf="escaneando" (click)="detenerEscaneoQR()" shape="round">
+        <ion-icon slot="start" name="stop-circle-outline"></ion-icon>
+        {{ 'QrPage.Title.Stop' | translate }}
+      </ion-button>
+    </div>
+  </div>
+</div>
+
+-->

@@ -1,0 +1,104 @@
+<ion-content class="ion-padding-horizontal page" #page>
+  <ion-grid fixed *ngIf="asistencia" class="informacionQr enmarcar">
+    <!--<h1> Has quedado presente en tu clase </h1>-->
+    <ion-row>
+      <!--Hora de termino-->
+      <ion-col size="5">{{ 'MyClassPage.Col.Headquarters' | translate }}: </ion-col>
+      <ion-col size="7">{{ asistencia!.sede }}</ion-col>
+    </ion-row>
+    <ion-row>
+      <!--Hora de termino-->
+      <ion-col size="5">{{ 'MyClassPage.Col.SubjectID' | translate }}: </ion-col>
+      <ion-col size="7">{{ asistencia!.idAsignatura }}</ion-col>
+    </ion-row>
+    <ion-row>
+      <!--Hora de termino-->
+      <ion-col size="5">{{ 'MyClassPage.Col.Section' | translate }}: </ion-col>
+      <ion-col size="7">{{ asistencia!.seccion }}</ion-col>
+    </ion-row>
+    <ion-row>
+      <!--Hora de termino-->
+      <ion-col size="5">{{ 'MyClassPage.Col.Subject Name' | translate }}: </ion-col>
+      <ion-col size="7">{{ asistencia!.nombreAsignatura }}</ion-col>
+    </ion-row>
+    <ion-row>
+      <!--Hora de termino-->
+      <ion-col size="5">{{ 'MyClassPage.Col.TeacherName' | translate }}: </ion-col>
+      <ion-col size="7">{{ asistencia!.nombreProfesor }}</ion-col>
+    </ion-row>
+    <ion-row>
+      <!--Hora de termino-->
+      <ion-col size="5">{{ 'MyClassPage.Col.Day' | translate }}: </ion-col>
+      <ion-col size="7">{{ asistencia!.dia }}</ion-col>
+    </ion-row>
+    <ion-row>
+      <!--Hora de termino-->
+      <ion-col size="5">{{ 'MyClassPage.Col.StartBlock' | translate }}: </ion-col>
+      <ion-col size="7">{{ asistencia!.bloqueInicio }}</ion-col>
+    </ion-row>
+    <ion-row>
+      <!--Hora de termino-->
+      <ion-col size="5">{{ 'MyClassPage.Col.TermBlock' | translate }}: </ion-col>
+      <ion-col size="7">{{ asistencia!.bloqueTermino }}</ion-col>
+    </ion-row>
+    <ion-row>
+      <!--Hora de termino-->
+      <ion-col size="5">{{ 'MyClassPage.Col.StartTime' | translate }}: </ion-col>
+      <ion-col size="7">{{ asistencia!.horaInicio }}</ion-col>
+    </ion-row>
+    <ion-row>
+      <!--Hora de termino-->
+      <ion-col size="5">{{ 'MyClassPage.Col.EndTime' | translate }}: </ion-col>
+      <ion-col size="7">{{ asistencia!.horaFin }}</ion-col>
+    </ion-row>
+  </ion-grid>
+
+</ion-content>
+
+
+<!--
+<table class="informacionQr enmarcar table-striped">
+      <tbody>
+        <tr>
+          <td>Sede: </td>
+          <td>{{ asistencia!.sede }}</td>
+        </tr>
+        <tr>
+          <td>ID Asignatura: </td>
+          <td>{{ asistencia!.idAsignatura }}</td>
+        </tr>
+        <tr>
+          <td>Sección: </td>
+          <td>{{ asistencia!.seccion }}</td>
+        </tr>
+        <tr>
+          <td>Nombre Asignatura: </td>
+          <td>{{ asistencia!.nombreAsignatura }}</td>
+        </tr>
+        <tr>
+          <td>Nombre Profesor: </td>
+          <td>{{ asistencia!.nombreProfesor }}</td>
+        </tr>
+        <tr>
+          <td>Día: </td>
+          <td>{{ asistencia!.dia }}</td>
+        </tr>
+        <tr>
+          <td>Bloque Inicio: </td>
+          <td>{{ asistencia!.bloqueInicio }}</td>
+        </tr>
+        <tr>
+          <td>Bloque Término: </td>
+          <td>{{ asistencia!.bloqueTermino }}</td>
+        </tr>
+        <tr>
+          <td>Hora Inicio: </td>
+          <td>{{ asistencia!.horaInicio }}</td>
+        </tr>
+        <tr>
+          <td>Hora Fin: </td>
+          <td>{{ asistencia!.horaFin }}</td>
+        </tr>
+      </tbody>
+    </table>
+    -->

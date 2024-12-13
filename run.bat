@@ -1,0 +1,1 @@
+ionic cap run android -l --external --host=172.20.10.5 --port=8100 --target ZY32GHTS9J

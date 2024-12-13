@@ -1,0 +1,35 @@
+ion-content {
+  --padding-top: 20px;
+  --padding-bottom: 20px;
+  --padding-end: 20px;
+  --padding-start: 20px;
+ 
+}
+  
+.center-container {
+  display:flex;
+  justify-content: center; 
+  align-items: center;     
+  height: 100%; 
+}
+
+.card-background {
+  position: relative;
+  background-image: url('../../../assets/images/equivocado.jpg');
+  background-size: cover; 
+  background-position: center;
+  background-repeat: no-repeat; 
+  padding: 180px; 
+  background-color: rgba(219, 116, 137, 0.689); 
+  border: 10px solid white; 
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgb(7, 22, 54);
+  align-items: center; 
+  height: auto;
+}
+
+.ion-button {
+  margin-top: 250px;
+  background-color: #010847;
+  color:#ffffff ;
+}

@@ -1,0 +1,46 @@
+<ion-content>
+  <div class="center-container">
+    <div class="ion-padding-vertical">
+      <ion-card class="ion-text-center card-background">
+        <ion-card-content>
+          <!-- Botón de retorno posicionado en la esquina superior izquierda -->
+          <ion-button slot="start" class="botonRetorno" size="medium" shape="round" (click)="regresar()">
+            <ion-icon class="iconoRetorno" slot="icon-only" name="return-Down-Back-Outline"></ion-icon>
+          </ion-button>
+        </ion-card-content>
+        <ion-card-content>
+  
+            <ion-toolbar>
+              <!--Paso 2: Responde la pregunta secreta-->
+              {{ 'QuestionPage.Toolbar.StepTwo' | translate }}
+            </ion-toolbar>
+            <br><br>
+
+        <ion-card>
+          <ion-card-subtitle>{{ usuario.preguntaSecreta }}</ion-card-subtitle>
+          <ion-label></ion-label>
+
+          <!--respuesta-->
+          <!--Ej:nombre de tu mascota-->
+          <ion-input 
+            class="respuesta"
+            [(ngModel)]="respuesta" 
+            placeholder="Ej:nombre de tu mascota"
+            (keyup.enter)="validarRespuestaSecreta()">          
+        </ion-input>
+
+          <ion-button 
+            shape="block" 
+            size="small" 
+            (click)="validarRespuestaSecreta()">
+            <ion-icon name="key"></ion-icon>
+            <!--Recuperar contraseña-->
+            {{ 'QuestionPage.Button.RecoverPassword' | translate }}
+          </ion-button>
+        </ion-card>
+        
+        </ion-card-content>
+      </ion-card>
+    </div>
+  </div>
+</ion-content>

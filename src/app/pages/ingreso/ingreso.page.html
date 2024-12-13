@@ -1,0 +1,89 @@
+
+<ion-header >
+  <ion-toolbar class="transparent-bg">
+    <div slot="start" class="ion-margin">
+      <app-language #selectLanguage></app-language>
+    </div>
+    <!--<div class="show-in-landscape">
+      <h1 class="glow-text"> {{ 'AppName' | translate }} </h1>
+    </div>-->
+    <div slot="end" class="ion-margin">
+      <ion-button shape="round" size="small" (click)="navigateTheme()">
+        {{ 'Login.Button.Theme' | translate }}
+        <ion-icon slot="start" name="color-wand-outline"></ion-icon>
+      </ion-button>
+    </div>
+   </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="ion-padding-horizontal page" #page>
+  <div class="center-container">
+    <div class="ion-padding-vertical">
+      <ion-card class="ion-text-center card-background">
+        <ion-card-content>
+          <ion-card-header>
+            <img src="../../../assets/images/Duoc.png" alt="" class="logo-img">
+            <br>
+            <ion-toolbar>
+              {{ 'AppName' | translate }}
+            </ion-toolbar>
+            <br>
+          </ion-card-header>
+
+          <ion-item>
+            <ion-input 
+              label="{{ 'Login.Label.Email' | translate }}" 
+              labelPlacement="floating"
+              [(ngModel)]="cuenta" 
+              placeholder="{{ 'Login.Placeholder.Email' | translate }}"
+              (keyup.enter)="passwordInput.setFocus()"> <!-- Utiliza la referencia de plantilla directamente -->
+            </ion-input>
+          </ion-item>
+          <br>
+          <ion-item>
+            <ion-input 
+              #passwordInput 
+              label="{{ 'Login.Label.Password' | translate }}"
+              labelPlacement="floating"
+              [(ngModel)]="password" 
+              placeholder="{{ 'Login.Placeholder.Password' | translate }}"
+              type="password"
+              (keyup.enter)="ingresar()"> <!-- Ejecuta ingresar() al presionar Enter -->              
+            </ion-input>
+          </ion-item>
+          <br>
+          <!-- boton ingresar -->
+          <ion-grid>
+            <ion-row>
+              <ion-col size="12" class="centrar">
+                <ion-button shape="block" size="small" (click)="ingresar()">
+                  <ion-icon name="log-in"></ion-icon>
+                  {{ 'Login.Button.Login' | translate }}
+                </ion-button>
+              </ion-col>
+            </ion-row>
+            <br>
+            <br>
+          </ion-grid>
+
+        </ion-card-content>
+      </ion-card>
+    </div>
+  </div>
+</ion-content>
+
+
+<ion-footer>
+  
+  <ion-button color="primary" shape="block" (click)="registrarNuevoUsuario()">
+    {{ 'Login.Button.Signin' | translate }}
+  </ion-button>
+
+  <ion-button color="secondary" shape="block" (click)="ingresarValidarCorreo()">
+    {{ 'Login.Button.ForgotPassword' | translate }}
+  </ion-button>
+  <ion-button color="warning" shape="block" (click)="miRuta()">
+    {{ 'Login.Button.Map' | translate }}
+  </ion-button>
+</ion-footer>
+

@@ -1,0 +1,60 @@
+/* Estilos generales */
+ion-content {
+  --padding-top: 20px;
+  --padding-bottom: 20px;
+  --padding-end: 20px;
+  --padding-start: 20px;
+}
+
+.center-container {
+  display: flex;
+  justify-content: center; 
+  align-items: center;     
+  height: 100%;
+}
+
+.card-background {
+  position: relative;
+  background-image: url('../../../assets/images/CorrectoLimpio.png');
+  background-size: 400px;
+  background-position: center;
+  background-repeat: no-repeat; 
+  padding: 180px;
+  --background: rgba(219, 116, 137, 0.689); 
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgb(7, 22, 54);
+  height: 500px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-end; /* Alinea contenido a la derecha */
+}
+
+/* Contenedor de la contraseña */
+.password-container {
+  flex-direction: column;
+  align-items: flex-end;
+  margin-right: 20px;
+  right: -120px;
+}
+
+.password-display {
+  font-size: 20px;
+  color: #ffffff;
+  font-weight: bold;
+  text-align: center;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+  margin-top: 10px; /* Ajuste para alinearse debajo del '¡Correcto!' */
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin-top: 20px;
+}
+
+.ion-button {
+  background-color: #010847;
+  color: #ffffff;
+}

@@ -1,0 +1,114 @@
+<ion-content [fullscreen]="true" class="ion-padding-horizontal">
+
+  <br>
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <!--Mis datos-->
+      <ion-title size="large">{{ "MyData.Title.MyData" | translate }}</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <!--Cuenta-->
+  <ion-item #itemCuenta>
+    <ion-input [(ngModel)]="usuario.cuenta" labelPlacement="floating" label="{{ 'MyData.Label.Account' | translate }}"
+      placeholder="EJ: Atorres"></ion-input>
+  </ion-item>
+
+  <!--Nombre-->
+  <ion-item #itemNombre>
+    <ion-input [(ngModel)]="usuario.nombre" labelPlacement="floating" label="{{ 'MyData.Label.Name' | translate }}" 
+    placeholder="EJ: Ana"></ion-input>
+  </ion-item>
+
+  <!--Apellido-->
+  <ion-item #itemApellido>
+    <ion-input [(ngModel)]="usuario.apellido" labelPlacement="floating" label="{{ 'MyData.Label.Surname' | translate }}"
+      placeholder="EJ: Leiva"></ion-input>
+  </ion-item>
+
+  <!--Correo-->
+  <ion-item #itemCorreo>
+    <ion-input [(ngModel)]="usuario.correo" labelPlacement="floating" label="{{ 'MyData.Label.Email' | translate }}"
+      placeholder="EJ: atorres@duocuc.cl"></ion-input>
+  </ion-item>
+
+  <!--Pregunta Secreta-->
+  <ion-item #itemPreguntaSecreta>
+    <ion-input [(ngModel)]="usuario.preguntaSecreta" labelPlacement="floating" label="{{ 'MyData.Label.secretQuestion' | translate }}"
+      placeholder="EJ: "></ion-input>
+  </ion-item>
+
+  <!--Respuesta Secreta-->
+  <ion-item #itemRespuestaSecreta>
+    <ion-input [(ngModel)]="usuario.respuestaSecreta" labelPlacement="floating" label="{{ 'MyData.Label.secretAnswer' | translate }}"
+      placeholder="EJ: gato"></ion-input>
+  </ion-item>
+
+  <!--Educación-->
+  <ion-item #itemEducacion>
+    <ion-label position="floating">{{ 'MyData.Label.Education' | translate }}</ion-label>
+    <ion-select placeholder="{{ 'MyData.Placeholder.Education' | translate }}" [(ngModel)]="usuario.nivelEducacional!.id">
+      <ion-select-option *ngFor="let nivel of listaNivelesEducacionales" [value]="nivel.id">
+        {{ nivel.nombre }}
+      </ion-select-option>
+    </ion-select>
+  </ion-item>
+
+  <!--Fecha de Nacimiento-->
+  <ion-item #itemFechaNacimiento>
+    <table>
+      <tr>
+        <td class="fon-size-12">
+          {{ "MyData.Td.Birth" | translate }}
+        </td>
+        <td class="cell-align-right">
+          <input matInput [matDatepicker]="fechaNacimiento" [(ngModel)]="usuario.fechaNacimiento"
+            [placeholder]="'dd/mm/yyyy'" class="date-width">
+        </td>
+        <td class="cell-width-0">
+          <mat-datepicker-toggle matSuffix [for]="fechaNacimiento"></mat-datepicker-toggle>
+          <mat-datepicker #fechaNacimiento></mat-datepicker>
+        </td>
+      </tr>
+    </table>
+  </ion-item>
+  
+
+  <!--Contraseña-->
+  <ion-item #itemPassword>
+    <ion-input [(ngModel)]="usuario.password" type="password" labelPlacement="floating" label="{{ 'MyData.Input.Password' | translate }}"> </ion-input>
+  </ion-item>
+
+  <!--Dirección-->
+  <ion-item #itemDireccion>
+    <ion-input [(ngModel)]="usuario.direccion" labelPlacement="floating" label="{{ 'MyData.Input.Adress' | translate }}"
+      placeholder="EJ: Las Condes"></ion-input>
+  </ion-item>
+
+  <!--Imagen de Perfil-->
+  <ion-item #itemImagen class="profile-container ion-text-center">
+    <ion-avatar class="profile-avatar">
+      <ion-img [src]="usuario.imagen"></ion-img>
+    </ion-avatar>
+    <ion-button size="small" expand="block" (click)="mostrarOpcionesDeImagen()">{{ 'MyData.Button.image' | translate }}</ion-button>
+  </ion-item>
+
+  <ion-grid>
+    <ion-row>
+      <!--Botón Limpiar-->
+      <ion-col col-3>
+        <ion-button (click)="limpiar()" shape="block" size="small">
+          {{ "MyData.Button.Clean" | translate }}
+        </ion-button>
+      </ion-col>
+
+      <!--Botón Actualizar-->
+      <ion-col col-3>
+        <ion-button (click)="actualizarDatosPersonales()" shape="block" size="small">
+          {{ "MyData.Button.Update" | translate }}
+        </ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+</ion-content>

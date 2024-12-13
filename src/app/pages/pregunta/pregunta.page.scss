@@ -1,0 +1,92 @@
+ion-content {
+  --padding-top: 20px;
+  --padding-bottom: 20px;
+  --padding-end: 20px;
+  --padding-start: 20px;
+}
+
+.center-container {
+  display: flex;
+  justify-content: center; 
+  align-items: center;     
+  height: 100%; 
+}
+
+ion-card {
+  --background: rgba(255, 255, 255, 0.541); 
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgb(7, 22, 54);
+  align-items: center; 
+}
+
+
+.card-background {
+  position: relative;
+  background-image: url('../../../assets/images/Denisse.jpg');
+  background-size: cover;
+  color: #000000; 
+  padding: 60px; 
+}
+
+
+ion-card-subtitle {
+  font-size: 13px;
+  font-weight: bold;
+  color: #000000;
+  margin-bottom: 30px;
+}
+
+ion-input {
+  color: #000000;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-weight: bold;
+  margin-bottom: 40px;
+  border: 1px solid #0a1238; /* Borde negro */
+  border-radius: 5px; /* Bordes redondeados */
+}
+
+ion-button {
+  color: #ffffff;
+  --background: #031a30;
+  font-size: 14px;
+
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+ion-toolbar {
+  font-size: 15px;
+  --background: #031a30;     
+  border-radius: 10px; 
+  min-height: 20px; /* Ajuste mínimo pero flexible */
+  padding: 8px; /* Añadir algo de padding para separación */
+  display: flex; 
+  align-items: center; 
+  justify-content: center; 
+}
+
+.botonRetorno {
+  color: #474646; 
+  --background: #FFB800;     
+  font-size: 14px;
+  padding: 1px 110px;
+  width: 106%;
+  border-radius: 20px;
+  position: absolute; /* Posición absoluta dentro del ion-card */
+  top: -30px;
+  left: -140px;
+  z-index: 1; /* Asegura que esté encima de otros elementos */
+}
+
+.iconoRetorno {
+  color: rgb(0, 0, 0);
+  --background: white;
+}
+
+.respuesta {
+  padding: 5px;
+}
+

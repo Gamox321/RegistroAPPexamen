@@ -1,0 +1,24 @@
+<ion-content>
+  <div class="center-container">
+    <div class="ion-padding-vertical">
+      <ion-card class="ion-text-center card-background">
+        <ion-card-content class="password-container">
+          <!-- Texto que indica la contraseña -->
+          <ion-label class="password-display">Tu contraseña es:</ion-label>
+          <!-- Contraseña del usuario -->
+          <h2 class="password-display">{{ password }}</h2>
+        </ion-card-content>
+        
+        <!-- Botón de regreso siempre al final -->
+        <ion-card-content class="button-container">
+          <ion-button 
+            class="ion-button" 
+            fill="clear" 
+            (click)="volver()">
+            {{ 'CorrectPage.Button.Return' | translate }}
+          </ion-button>
+        </ion-card-content>
+      </ion-card>
+    </div>
+  </div>
+</ion-content>

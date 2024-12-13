@@ -1,0 +1,188 @@
+ion-content {
+  --padding-top: 20px;
+  /* Ajusta el padding para pantallas más pequeñas */
+  --padding-bottom: 20px;
+  --padding-end: 20px;
+  --padding-start: 20px;
+}
+
+/*
+ion-item {
+  --padding-bottom: 15px;
+  --background: rgba(255, 255, 255, 0.281);
+  /* Fondo semi-transparente */
+  /*
+  border-radius: 9px;
+  color: #f9f5f5;
+  height: 65px;
+  display: flex;
+  align-items: center;
+}
+*/
+/*
+::ng-deep .mat-datepicker-toggle {
+  color: blue;
+}
+
+body {
+  overflow-y: hidden;
+  overflow-x: hidden;
+}
+
+.center-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+h1 {
+  font-size: 18px;
+  color: #f9f5f5;
+  font-weight: bold;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  text-align: center;
+}
+
+ion-card-header {
+  text-align: center;
+}
+
+ion-toolbar {
+  --background: rgba(255, 255, 255, 0.281);
+  border-radius: 10px;
+  color: #000000;
+  height: 50px;
+  display: inline-table;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 16px;
+
+  &.custom-toolbar {
+      background-color: #FFB800 !important;
+      --ion-color-primary: #FFB800;
+  }
+}
+
+ion-input {
+  color: #f9f5f5;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-weight: bold;
+}
+
+ion-button {
+  color: #f9f5f5;
+  --background: #010847;
+  font-size: 14px;
+  padding: 1px 110px;
+  border-radius: 20px;
+}
+
+ion-label a {
+  color: #f9f5f5;
+  text-decoration: none;
+}
+
+ion-label a:hover {
+  text-decoration: underline;
+}
+
+ion-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.tituloQr {
+  flex: 1;
+  display: flexbox;
+  flex-direction: row;
+  flex-wrap: wrap;
+  text-align: center;
+  text-decoration: solid;
+  font-size: large;
+}
+
+.informacionQr {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+*/
+
+
+//añadido en control 2
+
+.video-container {
+  position: relative;
+  width: 100%;
+  max-width: 95vh; /* Ajusta según tu diseño */
+  max-height: 95vh;
+  margin: auto;
+}
+
+.video {
+  border-radius: 15px;
+  border: 3px solid gray;
+  overflow: auto; /* Permite scroll si el contenido es demasiado grande */
+  box-sizing: border-box; /* Incluye padding y border en el tamaño total */
+  max-width: 95vh;
+  max-height: 95vh;
+  min-height: 20vh;
+  min-width: 35vh;
+  width: 100%;
+  border-radius: 15px;
+  border: 3px solid gray;
+}
+
+.frame {
+  display: flex;
+  justify-content: center; /* Centra horizontalmente */
+  align-items: center;     /* Centra verticalmente */
+  padding: 20px;
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); 
+}
+
+
+/* Estilos para la línea horizontal animada */
+.moving-horizontal-line {
+  position: absolute;
+  width: 100%;
+  height: 10px; /* Grosor de la línea */
+  background-color: rgba(255, 0, 0, 0.8); /* Color de la línea */
+  display: none; /* Oculta la línea por defecto */
+}
+
+.moving-horizontal-line.active {
+  display: block; /* Muestra la línea cuando la clase .active está presente */
+  animation: moveHorizontal 3s ease-in-out infinite;
+}
+
+/* Animación de la línea horizontal: de arriba hacia abajo y vuelta */
+@keyframes moveHorizontal {
+  0% {
+    top: 0;
+  }
+  100% {
+    top: calc(100% - 10px); /* Se detiene al final del video */
+
+  }
+}
+
+.stop-button {
+  position: absolute;
+  bottom: 20%; /* Ajusta para poner el botón dentro del recuadro del video */
+  left: 50%;
+  transform: translateX(-50%); /* Centra horizontalmente */
+  z-index: 10; /* Asegura que el botón esté sobre el video y el overlay */
+  padding: 8px 16px;
+  color: #f9f5f5;
+  --background: #202fb5;
+  font-size: 14px;
+  border-radius: 20px;
+}

@@ -1,0 +1,138 @@
+ion-content {
+  --padding-top: 20px; /* Ajusta el padding para pantallas más pequeñas */
+  --padding-bottom: 20px;
+  --padding-end: 20px;
+  --padding-start: 20px;
+}
+
+ion-card {
+  --background: rgba(255, 255, 255, 0.541); /* Fondo semi-transparente */
+  border-radius: 10px;
+  padding: 40px;
+  box-shadow: 0 4px 8px rgb(7, 22, 54);
+}
+
+ion-item {
+  --padding-bottom: 15px; 
+  --background: rgba(255, 255, 255, 0.514);    
+  border-radius: 9px; 
+  color: #000000; 
+  height: 65px; 
+  display: flex; 
+  align-items: center; 
+}
+
+body {
+  overflow-y: hidden;
+  overflow-x: hidden;
+}
+
+.center-container {
+  display: flex;
+  justify-content: center; 
+  align-items: center;     
+  height: 100%;
+  padding-top: 25%;
+}
+
+.logo-img {
+  padding-left: 20%;
+  padding-right: 5%;
+}
+
+h1 {
+  font-size: 18px;
+  color: #000000; 
+  font-weight: bold; 
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  text-align: center; 
+}
+
+.card-background {
+  position: relative;
+  background-image: url('../../../assets/images/pao.jpg');
+  background-size: cover;
+  background-position: center;
+  color: #000000; 
+  padding: 20px; 
+}
+
+ion-card-header {
+  text-align: center;
+}
+
+ion-toolbar {
+  font-size: 15px;
+  --background: #1A1A1A;     
+  border-radius: 10px; 
+  height: 20px; 
+  display: flex; 
+  align-items: center; 
+  justify-content: center; 
+}
+
+ion-input {
+  color: #000000; 
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-weight: bold; 
+}
+
+ion-button {
+  color: #474646; 
+  --background: #FFB800;     
+  font-size: 14px;
+  padding: 1px 110px; 
+  border-radius: 20px; 
+}
+
+ion-label a {
+  color: #ffffff; 
+  text-decoration: none;
+}
+
+ion-label a:hover {
+  text-decoration: underline; //linea para pasar el mouse en recuperar
+}
+
+
+
+
+
+//añadido del profe
+.login-container {
+  border: 2px solid gray;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  --background: transparent;
+  -webkit-transform: translateX(-50%) translateY(-70%);
+  -moz-transform: translateX(-50%) translateY(-70%);
+  -ms-transform: translateX(-50%) translateY(-70%);
+  transform: translateX(-50%) translateY(-70%);
+}
+
+@media screen and (orientation: portrait) {
+  .login-container {
+      width: 300px;
+  }
+}
+
+@media screen and (orientation: landscape) {
+  .login-container {
+      width: 480px;
+      padding-top: 20px;
+      padding-bottom: 10px;
+  }
+
+  .float-left-landscape {
+      float: left;
+  }
+
+  .float-right-landscape {
+      float: right;
+  }
+}
+
+.transparent-input {
+  opacity: 90% !important;
+}

@@ -1,0 +1,45 @@
+<app-header 
+  (headerClick)="headerClick($event)">
+</app-header>
+
+<ion-content [fullscreen]="true">
+  <!-- Nueva Sección de Fondo y Logo -->
+  <!-- <div class="logoInicio">
+    <h1 class="ion-text-center" [@fadeInAnimation]>
+      ¡{{ 'HomePage.Title.Welcome' | translate }} {{ usuario.nombre }} {{ usuario.apellido }}!
+    </h1>
+    <img src="../../../assets/images/Duoc.png" alt="Logo Duoc" class="logo">
+  </div> -->
+
+  <!-- Componente para escaneo de QR -->
+  <app-codigoqr 
+    *ngIf="componenteSeleccionada === 'codigoqr'"
+    (scanned)="webQrScanned($event)"
+    (stopped)="webQrStopped()">
+  </app-codigoqr>
+
+  <!-- Componente de bienvenida -->
+  <app-bienvenida 
+    *ngIf="componenteSeleccionada === 'bienvenida'">
+  </app-bienvenida>
+
+  <!-- Componente para 'Mi clase' -->
+  <app-miclase  
+    *ngIf="componenteSeleccionada === 'miclase'">
+  </app-miclase>
+
+  <!-- Componente de foro -->
+  <app-foro     
+    *ngIf="componenteSeleccionada === 'foro'">
+  </app-foro>
+
+  <!-- Componente de Mis datos -->
+  <app-misdatos 
+    *ngIf="componenteSeleccionada === 'misdatos'">
+  </app-misdatos>
+
+</ion-content>
+
+<app-footer
+  (footerClick)="footerClick($event)">
+</app-footer>
